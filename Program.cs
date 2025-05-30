@@ -30,6 +30,7 @@ namespace New_POS_Application
             //Application.Run(new login());
             //Application.Run(new Finals_Activity1());
             //Application.Run(new Finals_Activity2());
+            // wahatadfak im a poop shit gay;
         }
     }
 }
