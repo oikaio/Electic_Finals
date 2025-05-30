@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE0E63DC-5959-47FB-9257-748FB4712CB1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>New_POS_Application</RootNamespace>
+    <AssemblyName>New_POS_Application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.9.0.3\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.10.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.10\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.10.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.10\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Windows.Compatibility, Version=0.16.13.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.Bindings.Windows.Compatibility.0.16.13\lib\netstandard2.0\ZXing.Windows.Compatibility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculation.cs" />
+    <Compile Include="Display_prelim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display_prelim.Designer.cs">
+      <DependentUpon>Display_prelim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_dbconnection.cs" />
+    <Compile Include="Finals_Activity1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finals_Activity1.Designer.cs">
+      <DependentUpon>Finals_Activity1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finals_Activity2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finals_Activity2.Designer.cs">
+      <DependentUpon>Finals_Activity2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginDb_dbconnections.cs" />
+    <Compile Include="MenuManager.cs" />
+    <Compile Include="menustrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menustrip.Designer.cs">
+      <DependentUpon>menustrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="midtermPOSH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="midtermPOSH.Designer.cs">
+      <DependentUpon>midtermPOSH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MidtermSSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MidtermSSS.Designer.cs">
+      <DependentUpon>MidtermSSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Midterm_Example3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Midterm_Example3.Designer.cs">
+      <DependentUpon>Midterm_Example3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="payrol_dbconnection.cs" />
+    <Compile Include="payrol_variables.cs" />
+    <Compile Include="Pizza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pizza.Designer.cs">
+      <DependentUpon>Pizza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POS_Cashier_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS_Cashier_Interface.Designer.cs">
+      <DependentUpon>POS_Cashier_Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pos_dbconnection.cs" />
+    <Compile Include="Prelim_Exam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prelim_Exam.Designer.cs">
+      <DependentUpon>Prelim_Exam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Price_Item_Value.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sampledb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sampledb.Designer.cs">
+      <DependentUpon>Sampledb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSS.Designer.cs">
+      <DependentUpon>SSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sssdisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sssdisplay.Designer.cs">
+      <DependentUpon>sssdisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="useraccount_db_connection.cs" />
+    <Compile Include="Variables.cs" />
+    <EmbeddedResource Include="Display_prelim.resx">
+      <DependentUpon>Display_prelim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finals_Activity1.resx">
+      <DependentUpon>Finals_Activity1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finals_Activity2.resx">
+      <DependentUpon>Finals_Activity2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menustrip.resx">
+      <DependentUpon>menustrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="midtermPOSH.resx">
+      <DependentUpon>midtermPOSH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MidtermSSS.resx">
+      <DependentUpon>MidtermSSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Midterm_Example3.resx">
+      <DependentUpon>Midterm_Example3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pizza.resx">
+      <DependentUpon>Pizza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS_Cashier_Interface.resx">
+      <DependentUpon>POS_Cashier_Interface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prelim_Exam.resx">
+      <DependentUpon>Prelim_Exam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sampledb.resx">
+      <DependentUpon>Sampledb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSS.resx">
+      <DependentUpon>SSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sssdisplay.resx">
+      <DependentUpon>sssdisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nitro_Wallpaper_01_3840x2400.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baki.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nitro_Wallpaper_02_3840x2400.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logincon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heads.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bioo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nitro_Wallpaper_01_3840x24001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kape.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kape1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ca1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spidey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\awawawaaw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wawawawaa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cav.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qewq.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\%3bprete.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mascot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ediit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fillee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searrrc.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+</Project>
