@@ -39,3 +39,5 @@ C:\Users\Kaiser\Downloads\New_POS_Application-20250220T063002Z-001\New_POS_Appli
 C:\Users\Kaiser\Downloads\New_POS_Application-20250220T063002Z-001\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.exe
 C:\Users\Kaiser\Downloads\New_POS_Application-20250220T063002Z-001\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.pdb
 C:\Users\Kaiser\Downloads\New_POS_Application-20250220T063002Z-001\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Finals_Activity2.resources
+C:\Users\Kaiser\Downloads\New_POS_Application-20250220T063002Z-001\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Finals_Activity6.resources
+C:\Users\Kaiser\Downloads\New_POS_Application-20250220T063002Z-001\New_POS_Application\New_POS_Application\obj\Debug\New_POS_Application.Finals_Activity7.resources

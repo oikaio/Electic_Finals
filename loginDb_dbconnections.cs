@@ -19,7 +19,7 @@ namespace New_POS_Application
         public void login_connString()
         {
             login_sql_connection = new SqlConnection();
-            login_connectionString = "Data Source  = WYNE; Initial Catalog = POSDB; user id = sa; password = anabelladoctor";
+            login_connectionString = "Data Source = LAPTOP-FODOSL9R\\SQLEXPRESS02; Initial Catalog = POSDB; Trusted_Connection = True";
             login_sql_connection = new SqlConnection(login_connectionString);
             login_sql_connection.ConnectionString = login_connectionString;
             login_sql_connection.Open();

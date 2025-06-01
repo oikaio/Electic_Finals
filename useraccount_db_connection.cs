@@ -22,7 +22,7 @@ namespace New_POS_Application
         {
             //codes to establish connection from C# forms to the SQL Server database 
             useraccount_sql_connection = new SqlConnection();
-            useraccount_connectionString = "Data Source = WYNE; Initial Catalog = POSDB;  user id = sa; password = anabelladoctor"; 
+            useraccount_connectionString = "Data Source = LAPTOP-FODOSL9R\\SQLEXPRESS02; Initial Catalog = POSDB; Trusted_Connection = True";
             useraccount_sql_connection = new SqlConnection(useraccount_connectionString);
             useraccount_sql_connection.ConnectionString = useraccount_connectionString;
             useraccount_sql_connection.Open();

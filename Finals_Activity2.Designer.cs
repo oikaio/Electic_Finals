@@ -80,7 +80,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pricelbl20 = new System.Windows.Forms.Label();
             this.pricelbl19 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.pricelbl18 = new System.Windows.Forms.Label();
             this.pricelbl17 = new System.Windows.Forms.Label();
             this.pricelbl16 = new System.Windows.Forms.Label();
             this.pricelbl15 = new System.Windows.Forms.Label();
@@ -120,7 +120,7 @@
             this.picpathTxtbox1 = new System.Windows.Forms.TextBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pricelbl18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -176,7 +176,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pricelbl18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -790,7 +790,7 @@
             this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox4.Controls.Add(this.pricelbl20);
             this.groupBox4.Controls.Add(this.pricelbl19);
-            this.groupBox4.Controls.Add(this.label31);
+            this.groupBox4.Controls.Add(this.pricelbl18);
             this.groupBox4.Controls.Add(this.pricelbl17);
             this.groupBox4.Controls.Add(this.pricelbl16);
             this.groupBox4.Controls.Add(this.pricelbl15);
@@ -850,7 +850,7 @@
             this.groupBox4.Controls.Add(this.name1lbl);
             this.groupBox4.Controls.Add(this.pictureBox16);
             this.groupBox4.Controls.Add(this.pictureBox17);
-            this.groupBox4.Controls.Add(this.pricelbl18);
+            this.groupBox4.Controls.Add(this.pictureBox18);
             this.groupBox4.Controls.Add(this.pictureBox19);
             this.groupBox4.Controls.Add(this.pictureBox20);
             this.groupBox4.Controls.Add(this.pictureBox11);
@@ -904,17 +904,17 @@
             this.pricelbl19.TabIndex = 216;
             this.pricelbl19.Text = "Name";
             // 
-            // label31
+            // pricelbl18
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("MV Boli", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label31.Location = new System.Drawing.Point(690, 689);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(57, 23);
-            this.label31.TabIndex = 215;
-            this.label31.Text = "Name";
+            this.pricelbl18.AutoSize = true;
+            this.pricelbl18.Font = new System.Drawing.Font("MV Boli", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pricelbl18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pricelbl18.Location = new System.Drawing.Point(690, 689);
+            this.pricelbl18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pricelbl18.Name = "pricelbl18";
+            this.pricelbl18.Size = new System.Drawing.Size(57, 23);
+            this.pricelbl18.TabIndex = 215;
+            this.pricelbl18.Text = "Name";
             // 
             // pricelbl17
             // 
@@ -1322,16 +1322,16 @@
             this.pictureBox17.TabIndex = 18;
             this.pictureBox17.TabStop = false;
             // 
-            // pricelbl18
+            // pictureBox18
             // 
-            this.pricelbl18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pricelbl18.Location = new System.Drawing.Point(527, 689);
-            this.pricelbl18.Margin = new System.Windows.Forms.Padding(4);
-            this.pricelbl18.Name = "pricelbl18";
-            this.pricelbl18.Size = new System.Drawing.Size(220, 181);
-            this.pricelbl18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pricelbl18.TabIndex = 17;
-            this.pricelbl18.TabStop = false;
+            this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox18.Location = new System.Drawing.Point(527, 689);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(220, 181);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox18.TabIndex = 17;
+            this.pictureBox18.TabStop = false;
             // 
             // pictureBox19
             // 
@@ -1953,7 +1953,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pricelbl18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -1982,7 +1982,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.PictureBox pricelbl18;
+        private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox11;
@@ -2102,7 +2102,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label time_dateLbl;
         private System.Windows.Forms.Label terminal_noLbl;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label pricelbl18;
         private System.Windows.Forms.Label pricelbl17;
         private System.Windows.Forms.Label pricelbl16;
         private System.Windows.Forms.Label pricelbl15;

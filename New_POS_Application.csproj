@@ -90,6 +90,18 @@
     <Compile Include="Finals_Activity2.Designer.cs">
       <DependentUpon>Finals_Activity2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Finals_Activity6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finals_Activity6.Designer.cs">
+      <DependentUpon>Finals_Activity6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finals_Activity7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finals_Activity7.Designer.cs">
+      <DependentUpon>Finals_Activity7.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Finals_Activity2.resx">
       <DependentUpon>Finals_Activity2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finals_Activity6.resx">
+      <DependentUpon>Finals_Activity6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finals_Activity7.resx">
+      <DependentUpon>Finals_Activity7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

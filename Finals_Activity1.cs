@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -24,7 +25,6 @@ namespace New_POS_Application
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         public Finals_Activity1()
         {
-
             InitializeComponent();
         }
 
@@ -33,15 +33,23 @@ namespace New_POS_Application
             this.WindowState = FormWindowState.Maximized;
             try
             {
+                posdb_connect.pos_connectionString = "Data Source = LAPTOP-FODOSL9R\\SQLEXPRESS02; Initial Catalog = POSDB; Trusted_Connection = True";
+                posdb_connect.pos_connString();
                 posdb_connect.pos_select();
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterSelect();
                 posdb_connect.pos_sqldatasetSELECT();
                 datagriddispaly.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
+
             }
             catch (Exception)
-            { 
+            {
+                MessageBox.Show("Error occurs in this area!");
             }
+           
+
+  
+
         }
         private void cleartextboxes()
         {
@@ -94,7 +102,7 @@ namespace New_POS_Application
         {
             try
             {
-                posdb_connect.pos_sql = "INSERT INTO pos_nameTbl ( pos_id, name1, name2,  name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20) VALUES('" + pos_id_comboBox.Text + "', '" + nameTxtbox1.Text 
+                posdb_connect.pos_sql = "INSERT INTO pos_nameTbl ( pos_id, name1, name2,  name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20,) VALUES('" + pos_id_comboBox.Text + "', '" + nameTxtbox1.Text 
                 + "', '" + nameTxtbox2.Text + "', '" + nameTxtbox3.Text + "', '" +
                 nameTxtbox4.Text + "','" + nameTxtbox5.Text + "', '" +
                 nameTxtbox6.Text + "', '" + nameTxtbox7.Text + "', '" +
@@ -108,16 +116,15 @@ namespace New_POS_Application
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
-                posdb_connect.pos_sql = "INSERT INTO pos_priceTbl (price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, price11, price12, price13, price14, price15, price16, price17, price18, price19, price20, pos_id) VALUES('" + priceTxtbox1.Text + "', '" + priceTxtbox2.Text + "', '" + priceTxtbox3.Text + "', '" +
-                priceTxtbox4.Text + "','" + priceTxtbox5.Text + "', '" +
-                priceTxtbox6.Text + "', '" + priceTxtbox7.Text + "', '" +
-                priceTxtbox8.Text + "', '" + priceTxtbox9.Text + "', '" +
-                priceTxtbox10.Text + "', '" + priceTxtbox11.Text + "', '" +
-                priceTxtbox12.Text + "', '" + priceTxtbox13.Text + "', '" +
-                priceTxtbox14.Text + "', '" + priceTxtbox15.Text + "', '" +
-                priceTxtbox16.Text + "', '" + priceTxtbox17.Text + "', '" +
-                priceTxtbox18.Text + "', '" + priceTxtbox19.Text + "', '" +
-                priceTxtbox20.Text + "',  '" + pos_id_comboBox.Text + "')";
+                posdb_connect.pos_sql = "INSERT INTO pos_priceTbl " +
+                    "(price1, price2, price3, price4, price5, price6, price7, price8, price9, price10, " +
+                    "price11, price12, price13, price14, price15, price16, price17, price18, price19, price20, pos_id) " +
+                    "VALUES ('" + priceTxtbox1.Text + "', '" + priceTxtbox2.Text + "', '" + priceTxtbox3.Text + "', '" + priceTxtbox4.Text + "', '" +
+                    priceTxtbox5.Text + "', '" + priceTxtbox6.Text + "', '" + priceTxtbox7.Text + "', '" + priceTxtbox8.Text + "', '" + priceTxtbox9.Text + "', '" +
+                    priceTxtbox10.Text + "', '" + priceTxtbox11.Text + "', '" + priceTxtbox12.Text + "', '" + priceTxtbox13.Text + "', '" + priceTxtbox14.Text + "', '" +
+                    priceTxtbox15.Text + "', '" + priceTxtbox16.Text + "', '" + priceTxtbox17.Text + "', '" + priceTxtbox18.Text + "', '" + priceTxtbox19.Text + "', '" +
+                    priceTxtbox20.Text + "', '" + pos_id_comboBox.Text + "')";
+
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterInsert();
 
@@ -153,151 +160,115 @@ namespace New_POS_Application
         {
             try
             {
-                posdb_connect.pos_sql = "SELECT * FROM pos_nameTbl INNER JOIN pos_picTbl  ON pos_nameTbl.pos_id = pos_picTbl.pos_id INNER JOIN pos_priceTbl ONpos_picTbl.pos_id = pos_priceTbl.pos_id WHERE pos_nameTbl.pos_id ='" + pos_id_comboBox.Text + "'"; 
+                posdb_connect.pos_sql = "SELECT * FROM pos_nameTbl INNER JOIN pos_picTbl  ON pos_nameTbl.pos_id = pos_picTbl.pos_id INNER JOIN pos_priceTbl ON pos_picTbl.pos_id = pos_priceTbl.pos_id WHERE pos_nameTbl.pos_id ='" + pos_id_comboBox.Text + "'" ; 
                 posdb_connect.pos_cmd();
                 posdb_connect.pos_sqladapterSelect();
                 posdb_connect.pos_sqldatasetSELECT();
                 datagriddispaly.DataSource = posdb_connect.pos_sql_dataset.Tables[0];
-                nameTxtbox1.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
-                                nameTxtbox2.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
-                                nameTxtbox3.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
-                                nameTxtbox4.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
-                                nameTxtbox5.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
-                                nameTxtbox6.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
-                                nameTxtbox7.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
-                                nameTxtbox8.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
-                                nameTxtbox9.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
-                                nameTxtbox10.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
-                                nameTxtbox11.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
-                                nameTxtbox12.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
-                                nameTxtbox13.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
-                                nameTxtbox14.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
-                                nameTxtbox15.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
-                                nameTxtbox16.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
-                                nameTxtbox17.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
-                                nameTxtbox18.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
-                                nameTxtbox19.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
-                                nameTxtbox20.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
-                                picpathTxtbox1.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
-                                pictureBox1.Image = Image.FromFile(picpathTxtbox1.Text);
-                                picpathTxtbox2.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
-                                pictureBox2.Image = Image.FromFile(picpathTxtbox2.Text);
-                                picpathTxtbox3.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
-                                pictureBox3.Image = Image.FromFile(picpathTxtbox3.Text);
-                                picpathTxtbox4.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
-                                pictureBox4.Image = Image.FromFile(picpathTxtbox4.Text);
-                                picpathTxtbox5.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
-                                pictureBox5.Image = Image.FromFile(picpathTxtbox5.Text);
-                                picpathTxtbox6.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
-                                pictureBox6.Image = Image.FromFile(picpathTxtbox6.Text);
-                                picpathTxtbox7.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
-                                pictureBox7.Image = Image.FromFile(picpathTxtbox7.Text);
-                                picpathTxtbox8.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
-                                pictureBox8.Image = Image.FromFile(picpathTxtbox8.Text);
-                                picpathTxtbox9.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
-                                pictureBox9.Image = Image.FromFile(picpathTxtbox9.Text);
-                                picpathTxtbox10.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
-                                pictureBox10.Image = Image.FromFile(picpathTxtbox10.Text);
-                                picpathTxtbox11.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
-                                pictureBox11.Image = Image.FromFile(picpathTxtbox11.Text);
-                                picpathTxtbox12.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
-                                pictureBox12.Image = Image.FromFile(picpathTxtbox12.Text);
-                                picpathTxtbox13.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
-                                pictureBox13.Image = Image.FromFile(picpathTxtbox13.Text);
-                                picpathTxtbox14.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
-                                pictureBox14.Image = Image.FromFile(picpathTxtbox14.Text);
-                                picpathTxtbox15.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
-                                pictureBox15.Image = Image.FromFile(picpathTxtbox15.Text);
-                                picpathTxtbox16.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
-                                pictureBox16.Image = Image.FromFile(picpathTxtbox16.Text);
-                                picpathTxtbox17.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
-                                pictureBox17.Image = Image.FromFile(picpathTxtbox17.Text);
-                                picpathTxtbox18.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
-                                pictureBox18.Image = Image.FromFile(picpathTxtbox18.Text);
-                                picpathTxtbox19.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
-                                pictureBox19.Image = Image.FromFile(picpathTxtbox19.Text);
-                                picpathTxtbox20.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
-                                pictureBox20.Image = Image.FromFile(picpathTxtbox20.Text);
-                                priceTxtbox1.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
-                                priceTxtbox2.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
-                                priceTxtbox3.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
-                                priceTxtbox4.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
-                                priceTxtbox5.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
-                                priceTxtbox6.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
-                                priceTxtbox7.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
-                                priceTxtbox8.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
-                                priceTxtbox9.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
-                                priceTxtbox10.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
-                                priceTxtbox11.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
-                                priceTxtbox12.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
-                                priceTxtbox13.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
-                                priceTxtbox14.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
-                                priceTxtbox15.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
-                                priceTxtbox16.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
-                                priceTxtbox17.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
-                                priceTxtbox18.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
-                                priceTxtbox19.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
-                                priceTxtbox20.Text =
-                posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
+                nameTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][2].ToString();
+                nameTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][3].ToString();
+                nameTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][4].ToString();
+                nameTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][5].ToString();
+                nameTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][6].ToString();
+                nameTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][7].ToString();
+                nameTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][8].ToString();
+                nameTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][9].ToString();
+
+                nameTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][10].ToString();
+                nameTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][11].ToString();
+                nameTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][12].ToString();
+                nameTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][13].ToString();
+                nameTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][14].ToString();
+                nameTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][15].ToString();
+                nameTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][16].ToString();
+                nameTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][17].ToString();
+                nameTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][18].ToString();
+                nameTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][19].ToString();
+                nameTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][20].ToString();
+                nameTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][21].ToString();
+
+                picpathTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][24].ToString();
+                pictureBox1.Image = Image.FromFile(picpathTxtbox1.Text);
+
+                picpathTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][25].ToString();
+                pictureBox2.Image = Image.FromFile(picpathTxtbox2.Text);
+
+                picpathTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][26].ToString();
+                pictureBox3.Image = Image.FromFile(picpathTxtbox3.Text);
+
+                picpathTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][27].ToString();
+                pictureBox4.Image = Image.FromFile(picpathTxtbox4.Text);
+
+                picpathTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][28].ToString();
+                pictureBox5.Image = Image.FromFile(picpathTxtbox5.Text);
+
+                picpathTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][29].ToString();
+                pictureBox6.Image = Image.FromFile(picpathTxtbox6.Text);
+
+                picpathTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][30].ToString();
+                pictureBox7.Image = Image.FromFile(picpathTxtbox7.Text);
+
+                picpathTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][31].ToString();
+                pictureBox8.Image = Image.FromFile(picpathTxtbox8.Text);
+
+                picpathTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][32].ToString();
+                pictureBox9.Image = Image.FromFile(picpathTxtbox9.Text);
+
+                picpathTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][33].ToString();
+                pictureBox10.Image = Image.FromFile(picpathTxtbox10.Text);
+
+                picpathTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][34].ToString();
+                pictureBox11.Image = Image.FromFile(picpathTxtbox11.Text);
+
+                picpathTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][35].ToString();
+                pictureBox12.Image = Image.FromFile(picpathTxtbox12.Text);
+
+                picpathTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][36].ToString();
+                pictureBox13.Image = Image.FromFile(picpathTxtbox13.Text);
+
+                picpathTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][37].ToString();
+                pictureBox14.Image = Image.FromFile(picpathTxtbox14.Text);
+
+                picpathTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][38].ToString();
+                pictureBox15.Image = Image.FromFile(picpathTxtbox15.Text);
+
+                picpathTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][39].ToString();
+                pictureBox16.Image = Image.FromFile(picpathTxtbox16.Text);
+
+                picpathTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][40].ToString();
+                pictureBox17.Image = Image.FromFile(picpathTxtbox17.Text);
+
+                picpathTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
+                pictureBox18.Image = Image.FromFile(picpathTxtbox18.Text);
+
+                picpathTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
+                pictureBox19.Image = Image.FromFile(picpathTxtbox19.Text);
+
+                picpathTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][43].ToString();
+                pictureBox20.Image = Image.FromFile(picpathTxtbox20.Text);
+
+                priceTxtbox1.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][46].ToString();
+                priceTxtbox2.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][47].ToString();
+                priceTxtbox3.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][48].ToString();
+                priceTxtbox4.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][49].ToString();
+                priceTxtbox5.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][50].ToString();
+                priceTxtbox6.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][51].ToString();
+                priceTxtbox7.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][52].ToString();
+                priceTxtbox8.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][53].ToString();
+                priceTxtbox9.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][54].ToString();
+                priceTxtbox10.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][55].ToString();
+                priceTxtbox11.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][56].ToString();
+                priceTxtbox12.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][57].ToString();
+                priceTxtbox13.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][58].ToString();
+                priceTxtbox14.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][59].ToString();
+                priceTxtbox15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
+                priceTxtbox16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
+                priceTxtbox17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
+                priceTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
+                priceTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
+                priceTxtbox20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
+                
+
             }
             catch (Exception)
             {

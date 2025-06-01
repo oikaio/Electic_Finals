@@ -17,6 +17,7 @@ namespace New_POS_Application
         pos_dbconnection posdb_connect = new pos_dbconnection();
         Price_Item_Value price_item_value = new Price_Item_Value();
         Variables variables = new Variables();
+        private string picpath;
 
         public Finals_Activity2()
         {
@@ -119,7 +120,7 @@ namespace New_POS_Application
             pictureBox17.Image = Image.FromFile(picpathTxtbox17.Text);
 
             picpathTxtbox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][41].ToString();
-            pricelbl18.Image = Image.FromFile(picpathTxtbox18.Text);
+            pictureBox18.Image = Image.FromFile(picpathTxtbox18.Text);
 
             picpathTxtbox19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][42].ToString();
             pictureBox19.Image = Image.FromFile(picpathTxtbox19.Text);
@@ -146,7 +147,7 @@ namespace New_POS_Application
             pricelbl15.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][60].ToString();
             pricelbl16.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][61].ToString();
             pricelbl17.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][62].ToString();
-            pricelbl18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
+            pictureBox18.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][63].ToString();
             pricelbl19.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][64].ToString();
             pricelbl20.Text = posdb_connect.pos_sql_dataset.Tables[0].Rows[0][65].ToString();
             

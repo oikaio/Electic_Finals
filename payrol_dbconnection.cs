@@ -20,7 +20,7 @@ namespace New_POS_Application
         public void payrol_connString()
         {
             payrol_sql_connection = new SqlConnection();
-            payrol_connectionString = "Data Source = WYNE; Initial Catalog = POSDB; user id = sa; password = anabelladoctor"; 
+            payrol_connectionString = "Data Source = LAPTOP-FODOSL9R\\SQLEXPRESS02; Initial Catalog = POSDB; Trusted_Connection = True";
             payrol_sql_connection = new SqlConnection(payrol_connectionString);
             payrol_sql_connection.ConnectionString = payrol_connectionString;
             payrol_sql_connection.Open();
