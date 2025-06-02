@@ -31,6 +31,9 @@ namespace New_POS_Application
             //Application.Run(new Finals_Activity1());
             //Application.Run(new Finals_Activity2());
             Application.Run(new Finals_Activity3());
+            // eto problem parin, d ko alam ano fix hehe
+
+
 
             //Application.Run(new Finals_Activity6());
             //Application.Run(new Finals_Activity7());

@@ -76,7 +76,9 @@ namespace New_POS_Application
             B_halohalocheckbox.Enabled = false;
             B_HawaiianchechBox.Enabled = false;
 
-            pictureBox1.Image = Image.FromFile("C:\\Users\\Kaiser\\Downloads\\New_POS_Application-20250220T063002Z-001\\New_POS_Application\\images\\pizza\\za.jfif");
+            //string rootFolder = "C:\\Users\\JC\\Documents\\school files\\Electic_Fi  nals\\Resources\\";
+            // o eto idea 
+            //pictureBox1.Image = Image.FromFile(rootFolder + "\\pizza\\za.jfif"); 
             pictureBox2.Image = Image.FromFile("C:\\Users\\Kaiser\\Downloads\\New_POS_Application-20250220T063002Z-001\\New_POS_Application\\images\\pizza\\zazzaza.jfif");
             pictureBox3.Image = Image.FromFile("C:\\Users\\Kaiser\\Downloads\\New_POS_Application-20250220T063002Z-001\\New_POS_Application\\images\\pizza\\is.jfif");
             pictureBox4.Image = Image.FromFile("C:\\Users\\Kaiser\\Downloads\\New_POS_Application-20250220T063002Z-001\\New_POS_Application\\images\\pizza\\qq.jfif");
@@ -956,7 +958,7 @@ namespace New_POS_Application
             //removing the contents of a listbox
             displayListbox.Items.Clear();
         }
-        mali to i transfered this one to the left one
+        
         private void button1_Click(object sender, EventArgs e)
         {
 
