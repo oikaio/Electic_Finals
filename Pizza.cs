@@ -904,6 +904,7 @@ namespace New_POS_Application
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // wait alin dito yon yowyoywy owyung nasa pinaka left na 
             //code for inserting default image inside the picturebox
            //pictureBox21.Image = Image.FromFile("C:\\Users\\Kaiser\\Downloads\\New_POS_Application-20250220T063002Z-001\\New_POS_Application\\images\\pizza\\pza.jfif");
 
@@ -955,7 +956,7 @@ namespace New_POS_Application
             //removing the contents of a listbox
             displayListbox.Items.Clear();
         }
-
+        mali to i transfered this one to the left one
         private void button1_Click(object sender, EventArgs e)
         {
 
