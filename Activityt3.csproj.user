@@ -1,6 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Display_prelim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Finals_Activity1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Finals_Activity2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Finals_Activity6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Finals_Activity7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="menustrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="midtermPOSH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MidtermSSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Midterm_Example3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pizza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="POS_Cashier_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Prelim_Exam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Sampledb.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SSS.cs">
       <SubType>Form</SubType>
     </Compile>
